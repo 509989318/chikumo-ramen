@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP | 千雲 | Chikumo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="/" class="header-logo">
+      <img src="/assets/images/Group-13-768x251.png" alt="千雲 Chikumo">
+    </a>
+    <nav class="header-nav">
+      <a href="/ja-jp/philosophy/">PHILOSOPHY</a>
+      <a href="/ja-jp/about/">ABOUT</a>
+      <a href="/ja-jp/our-ramen/">OUR RAMEN</a>
+      <a href="/ja-jp/location/">LOCATION</a>
+      <a href="https://www.104.com.tw/company/1a2x6bkgq7?jobsource=checkc" target="_blank">RECRUIT</a>
+      <a href="/ja-jp/gallery/">GALLERY</a>
+      <a href="/ja-jp/contact-us/">CONTACT US</a>
+      <div class="lang-switch">
+        <span class="current">JP</span>
+        <div class="lang-dropdown">
+          <a href="/zh-tw/">TW</a>
+          <a href="/en-us/">EN</a>
+        </div>
+      </div>
+    </nav>
+    <div class="header-right">
+      <a href="/ja-jp/location/" class="order-btn">Order now</a>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/chikumo_tw" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/Ramen.Chikumo/" target="_blank"><i class="fab fa-square-facebook"></i></a>
+      </div>
+      <div class="hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <span class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</span>
+    <a href="/">TOP</a>
+    <a href="/ja-jp/philosophy/">PHILOSOPHY</a>
+    <a href="/ja-jp/about/">ABOUT</a>
+    <a href="/ja-jp/our-ramen/">OUR RAMEN</a>
+    <a href="/ja-jp/location/">LOCATION</a>
+    <a href="https://www.104.com.tw/company/1a2x6bkgq7?jobsource=checkc" target="_blank">RECRUIT</a>
+    <a href="/ja-jp/gallery/">GALLERY</a>
+    <a href="/ja-jp/contact-us/">CONTACT US</a>
+    <div style="display:flex;gap:16px;margin-top:12px;">
+      <a href="/">JP</a> <a href="/zh-tw/">TW</a> <a href="/en-us/">EN</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="/assets/images/231222_0086_tate-1.png" alt="千雲ラーメン">
+    <div class="hero-overlay">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;">
+        <span class="hero-text-vertical">日本の鶏白湯。</span>
+        <div class="hero-logo-overlay">
+          <img src="/assets/images/shirochikumo-1.png" alt="千雲">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 私たちの想い -->
+  <section class="section">
+    <h2 class="section-title">私たちの想い</h2>
+    <div class="section-divider"></div>
+    <p class="section-text">
+      ラーメン屋はレストランと違い、たった一杯の器に、全てを注ぎ込むことができる。<br>
+      老若男女誰でも気軽に入れ、手頃な値段でお腹いっぱいになれる。<br>
+      そんなラーメンという食文化の素晴らしさを日本から世界へ届けたい。<br>
+      一杯のラーメンで、世界中に感動を。<br>
+      その思いで私たち麺屋千雲は今日もラーメンを作り続けています。
+    </p>
+  </section>
+
+  <!-- 鶏へのこだわり -->
+  <div class="two-col">
+    <div class="col-text">
+      <h2 class="section-title" style="text-align:left;">鶏へのこだわり</h2>
+      <div style="width:100%;height:1px;background:#333;margin-bottom:30px;"></div>
+      <p style="font-size:14px;line-height:2.2;color:#555;">
+        私たちの鶏白湯ラーメンには、化学調味料や添加物を<br>
+        一切使っておりません。<br>
+        それは、鶏本来の旨味を100％引き出すため。<br>
+        丸鶏を１羽まるごと使用し、一晩じっくり炊き込んだ後、<br>
+        骨をひとつひとつ完全に潰しています。<br>
+        鶏の旨味を凝縮した自慢の濃厚鶏白湯スープをご賞味ください。
+      </p>
+    </div>
+    <div class="col-image">
+      <img src="/assets/images/231222_0744-1.png" alt="鶏白湯スープ">
+    </div>
+  </div>
+
+  <!-- Navigation Grid -->
+  <section style="padding:60px 0;">
+    <div class="nav-grid">
+      <a href="/ja-jp/philosophy/" class="nav-grid-item">
+        <img src="/assets/images/231222_0445-1-4.png" alt="Philosophy">
+        <span class="label">PHILOSOPHY</span>
+      </a>
+      <a href="/ja-jp/about/" class="nav-grid-item">
+        <img src="/assets/images/231222_0770-1-3.png" alt="About">
+        <span class="label">ABOUT</span>
+      </a>
+      <a href="/ja-jp/our-ramen/" class="nav-grid-item">
+        <img src="/assets/images/231222_0091-2-1.png" alt="Our Ramen">
+        <span class="label">OUR RAMEN</span>
+      </a>
+      <a href="/ja-jp/location/" class="nav-grid-item">
+        <img src="/assets/images/231222_0342-1-3.png" alt="Location">
+        <span class="label">LOCATION</span>
+      </a>
+      <a href="https://www.104.com.tw/company/1a2x6bkgq7?jobsource=checkc" target="_blank" class="nav-grid-item">
+        <img src="/assets/images/231222_1134-1-2.png" alt="Recruit">
+        <span class="label">RECRUIT</span>
+      </a>
+      <a href="/ja-jp/gallery/" class="nav-grid-item">
+        <img src="/assets/images/231222_0433-1-1.png" alt="Gallery">
+        <span class="label">GALLERY</span>
+      </a>
+      <a href="/ja-jp/contact-us/" class="nav-grid-item">
+        <img src="/assets/images/231222_0127-1-1.png" alt="Contact Us">
+        <span class="label">CONTACT US</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo"><img src="/assets/images/Group-8.svg" alt="RAMEN CHIKUMO"></a>
+      <nav class="footer-nav">
+        <a href="/ja-jp/philosophy/">PHILOSOPHY</a>
+        <a href="/ja-jp/about/">ABOUT</a>
+        <a href="/ja-jp/our-ramen/">OUR RAMEN</a>
+        <a href="/ja-jp/location/">LOCATION</a>
+        <a href="https://www.104.com.tw/company/1a2x6bkgq7?jobsource=checkc" target="_blank">RECRUIT</a>
+        <a href="/ja-jp/gallery/">GALLERY</a>
+        <a href="/ja-jp/contact-us/">CONTACT US</a>
+        <div class="lang-switch">
+          <span class="current">JP</span>
+          <div class="lang-dropdown">
+            <a href="/zh-tw/">TW</a>
+            <a href="/en-us/">EN</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <p class="footer-copy">@ Chikumo.Inc.</p>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

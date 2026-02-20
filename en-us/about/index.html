@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABOUT | Chikumo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="header-logo"><img src="/assets/images/Group-13-768x251.png" alt="千雲 Chikumo"></a>
+    <nav class="header-nav">
+      <a href="/en-us/philosophy/">PHILOSOPHY</a>
+      <a href="/en-us/about/" class="active">ABOUT</a>
+      <a href="/en-us/our-ramen/">OUR RAMEN</a>
+      <a href="/en-us/location/">LOCATION</a>
+      <a href="https://www.104.com.tw/company/1a2x6bkgq7?jobsource=checkc" target="_blank">RECRUIT</a>
+      <a href="/en-us/gallery/">GALLERY</a>
+      <a href="/en-us/contact-us/">CONTACT US</a>
+      <div class="lang-switch"><span class="current">EN</span><div class="lang-dropdown"><a href="/">JP</a><a href="/zh-tw/">TW</a></div></div>
+    </nav>
+    <div class="header-right">
+      <a href="/en-us/location/" class="order-btn">Order now</a>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/chikumo_tw" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/Ramen.Chikumo/" target="_blank"><i class="fab fa-square-facebook"></i></a>
+      </div>
+      <div class="hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <span class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</span>
+    <a href="/">TOP</a><a href="/en-us/philosophy/">PHILOSOPHY</a><a href="/en-us/about/">ABOUT</a>
+    <a href="/en-us/our-ramen/">OUR RAMEN</a><a href="/en-us/location/">LOCATION</a>
+    <a href="/en-us/gallery/">GALLERY</a><a href="/en-us/contact-us/">CONTACT US</a>
+  </nav>
+
+  <section class="page-hero">
+    <img src="/assets/images/231222_0086_2-1-1.png" alt="About">
+    <div class="page-hero-overlay"></div>
+    <h1>ABOUT</h1>
+  </section>
+
+  <div class="company-info">
+    <h2>Company Overview</h2>
+    <div class="section-divider" style="margin-bottom:30px;"></div>
+    <table class="company-table">
+      <tr><td>Company Name</td><td>株式会社千雲</td></tr>
+      <tr><td>Address</td><td>〒150-0043 東京都渋谷区道玄坂1-16-5 大下ビル8F</td></tr>
+      <tr><td>Founded</td><td>2023年04月03日</td></tr>
+      <tr><td>Capital</td><td>1,000万円</td></tr>
+      <tr><td>CEO</td><td>中野 正幾</td></tr>
+    </table>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo"><img src="/assets/images/Group-8.svg" alt="RAMEN CHIKUMO"></a>
+      <nav class="footer-nav">
+        <a href="/en-us/philosophy/">PHILOSOPHY</a><a href="/en-us/about/">ABOUT</a>
+        <a href="/en-us/our-ramen/">OUR RAMEN</a><a href="/en-us/location/">LOCATION</a>
+        <a href="https://www.104.com.tw/company/1a2x6bkgq7?jobsource=checkc" target="_blank">RECRUIT</a>
+        <a href="/en-us/gallery/">GALLERY</a><a href="/en-us/contact-us/">CONTACT US</a>
+        <div class="lang-switch"><span class="current">EN</span><div class="lang-dropdown"><a href="/">JP</a><a href="/zh-tw/">TW</a></div></div>
+      </nav>
+    </div>
+    <p class="footer-copy">@ Chikumo.Inc.</p>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
