@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://chikumo-ramen.com/sitemap.xml
+Sitemap: https://chikumo-ramen.com/sitemap.rss
