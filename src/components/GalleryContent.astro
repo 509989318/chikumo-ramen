@@ -1,0 +1,67 @@
+---
+import type { Lang } from '../i18n/translations';
+import { t } from '../i18n/translations';
+import PageHero from './PageHero.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const images = Array.from({ length: 20 }, (_, i) => `/images/gallery-${i + 1}.png`);
+---
+
+<PageHero title={t(lang, 'galleryPageTitle')} />
+
+<section class="gallery-section">
+  <div class="gallery-grid">
+    {images.map((src, i) => (
+      <div class="gallery-item">
+        <img src={src} alt={`Gallery ${i + 1}`} loading="lazy" />
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .gallery-section {
+    padding: 40px 20px 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,134 @@
+---
+import type { Lang } from '../i18n/translations';
+import { t } from '../i18n/translations';
+import PageHero from './PageHero.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const ramenItems = [
+  {
+    name: t(lang, 'ramen1Name'),
+    catchphrase: t(lang, 'ramen1Catch'),
+    desc: t(lang, 'ramen1Desc'),
+    image1: '/images/ramen-paitan.png',
+    image2: '/images/ramen-paitan-2.png',
+    reverse: false,
+  },
+  {
+    name: t(lang, 'ramen2Name'),
+    catchphrase: t(lang, 'ramen2Catch'),
+    desc: t(lang, 'ramen2Desc'),
+    image1: '/images/ramen-shio.png',
+    image2: '/images/ramen-shio-2.png',
+    reverse: true,
+  },
+  {
+    name: t(lang, 'ramen3Name'),
+    catchphrase: t(lang, 'ramen3Catch'),
+    desc: t(lang, 'ramen3Desc'),
+    image1: '/images/ramen-tsukemen.png',
+    image2: '/images/ramen-tsukemen-2.png',
+    reverse: false,
+  },
+];
+---
+
+<PageHero title={t(lang, 'ourRamenPageTitle')} />
+
+<section class="ramen-list">
+  {ramenItems.map((item) => (
+    <div class:list={['ramen-item', { reverse: item.reverse }]}>
+      <div class="ramen-images">
+        <img src={item.image1} alt={item.name} class="ramen-img-main" loading="lazy" />
+        <img src={item.image2} alt="" class="ramen-img-sub" loading="lazy" />
+      </div>
+      <div class="ramen-info">
+        <p class="ramen-catch">{item.catchphrase}</p>
+        <h3 class="ramen-name">{item.name}</h3>
+        <div class="ramen-desc">
+          {item.desc.split('\n').map((line) => (
+            <p>{line}</p>
+          ))}
+        </div>
+      </div>
+    </div>
+  ))}
+</section>
+
+<style>
+  .ramen-list {
+    padding: 40px 20px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .ramen-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 0;
+  }
+
+  .ramen-item.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .ramen-images {
+    flex: 1;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .ramen-img-main {
+    width: 55%;
+    object-fit: cover;
+  }
+
+  .ramen-img-sub {
+    width: 40%;
+    object-fit: cover;
+  }
+
+  .ramen-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .ramen-catch {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+
+  .ramen-name {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .ramen-desc p {
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .ramen-item,
+    .ramen-item.reverse {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .ramen-info {
+      text-align: center;
+    }
+  }
+</style>

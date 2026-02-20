@@ -1,0 +1,105 @@
+---
+import type { Lang } from '../i18n/translations';
+import { t } from '../i18n/translations';
+import PageHero from './PageHero.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const stores = [
+  {
+    name: t(lang, 'store1Name'),
+    address: t(lang, 'store1Address'),
+    phone: t(lang, 'store1Phone'),
+    hours: t(lang, 'store1Hours'),
+    image: '/images/location-linsen.webp',
+    mapUrl: 'https://maps.google.com/?q=104台北市中山區林森北路105-1號',
+  },
+  {
+    name: t(lang, 'store2Name'),
+    address: t(lang, 'store2Address'),
+    phone: t(lang, 'store2Phone'),
+    hours: t(lang, 'store2Hours'),
+    image: '/images/location-guanghua.png',
+    mapUrl: 'https://maps.google.com/?q=100台北市中正區臨沂街3巷1號',
+  },
+];
+---
+
+<PageHero title={t(lang, 'locationPageTitle')} />
+
+<section class="location-list">
+  {stores.map((store) => (
+    <div class="store-card">
+      <div class="store-image">
+        <img src={store.image} alt={store.name} loading="lazy" />
+      </div>
+      <div class="store-info">
+        <h3 class="store-name">{store.name}</h3>
+        <p class="store-address">{store.address}</p>
+        <p class="store-phone">{store.phone}</p>
+        <p class="store-hours">{store.hours}</p>
+      </div>
+    </div>
+  ))}
+</section>
+
+<style>
+  .location-list {
+    padding: 40px 20px 100px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .store-card {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .store-image {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .store-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .store-info {
+    flex: 1;
+  }
+
+  .store-name {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .store-address,
+  .store-phone,
+  .store-hours {
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .store-card {
+      flex-direction: column;
+    }
+
+    .store-image {
+      max-width: 100%;
+    }
+  }
+</style>

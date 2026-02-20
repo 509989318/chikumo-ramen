@@ -1,2 +1,4 @@
-.DS_Store
-*.log
+node_modules/
+dist/
+.astro/
+_wp_backup/
