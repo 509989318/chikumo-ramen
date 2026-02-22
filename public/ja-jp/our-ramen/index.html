@@ -752,61 +752,8 @@
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
 				<style>
-.elementskit-menu-container.elementskit-menu-offcanvas-elements{width:100%;position:fixed;top:0;left:-100vw;height:100%;overflow-y:auto;overflow-x:hidden;padding-top:0;padding-left:0;padding-right:0;display:flex;flex-direction:column-reverse;justify-content:flex-end;transition:left .6s cubic-bezier(.6,.1,.68,.53);z-index:10000;background:#fff;max-width:350px;}
-.elementskit-menu-container.elementskit-menu-offcanvas-elements.active{left:0;transition:left .6s cubic-bezier(.22,.61,.24,1) 0s;}
-.elementskit-menu-overlay{position:fixed;z-index:9;top:0;left:0;height:100%;width:100%;background-color:rgba(51,51,51,.5);display:none;transition:opacity .3s ease;}
-.elementskit-menu-overlay.active{display:block;}
-.elementskit-menu-close,.elementskit-menu-hamburger{display:none;}
-@media(max-width:1024px){.elementskit-menu-close,.elementskit-menu-hamburger{display:block;}}
-.elementskit-menu-container.active .elementskit-dropdown[style*="display: block"],.elementskit-menu-container.active .elementskit-dropdown[style*="display:block"]{opacity:1!important;visibility:visible!important;position:static!important;transform:none!important;box-shadow:none!important;pointer-events:auto!important;margin:0!important;padding-left:15px!important;}
-.elementskit-menu-close{border:1px solid rgba(0,0,0,.5);color:rgba(51,51,51,.5);float:right;margin:20px;padding:8px;background-color:transparent;border-radius:.25rem;cursor:pointer;width:45px;position:relative;z-index:10;}
-.elementskit-nav-identity-panel{display:none;}
-@media(max-width:1024px){.elementskit-nav-identity-panel{display:block;position:relative;z-index:5;width:100%;}}
-@media(max-width:767px){.elementskit-menu-container.elementskit-menu-offcanvas-elements{max-width:80%;}}
-@media(min-width:1025px){.elementskit-menu-container.elementskit-menu-offcanvas-elements{position:static!important;left:auto!important;height:auto!important;overflow:visible!important;max-width:none;flex-direction:row;width:auto;display:flex;}.elementskit-menu-overlay{display:none!important;}.elementskit-nav-identity-panel{display:none!important;}}
 </style>
-<script>
-(function(){
-  function findNav(el){return el.closest('nav')||el.closest('[class*="elementor"]');}
-  document.addEventListener('click',function(e){
-    var toggler=e.target.closest('.elementskit-menu-toggler');
-    if(!toggler)return;
-    e.preventDefault();
-    var nav=findNav(toggler);if(!nav)return;
-    var container=nav.querySelector('.elementskit-menu-container');
-    var overlay=nav.querySelector('.elementskit-menu-overlay');
-    if(!container)return;
-    var isOpen=container.classList.contains('active');
-    if(isOpen){
-      container.classList.remove('active');
-      if(overlay)overlay.classList.remove('active');
-    }else{
-      container.classList.add('active');
-      if(overlay)overlay.classList.add('active');
-    }
-  });
-  // Close on overlay click
-  document.addEventListener('click',function(e){
-    if(!e.target.classList.contains('elementskit-menu-overlay'))return;
-    var nav=findNav(e.target);if(!nav)return;
-    var container=nav.querySelector('.elementskit-menu-container');
-    if(container)container.classList.remove('active');
-    e.target.classList.remove('active');
-  });
-  // Submenu toggle in mobile
-  document.addEventListener('click',function(e){
-    var toggle=e.target.closest('.elementskit-dropdown-has > a');
-    if(!toggle)return;
-    var li=toggle.parentElement;
-    var sub=li.querySelector('.elementskit-dropdown');
-    if(!sub)return;
-    var container=li.closest('.elementskit-menu-container');
-    if(container&&container.classList.contains('active')){
-      e.preventDefault();
-      sub.style.display=sub.style.display==='block'?'none':'block';
-    }
-  });
-})();
-</script>
+<link rel="stylesheet" href="/css/menu.css">
+<script src="/js/menu.js"></script>
 </body>
 </html>
