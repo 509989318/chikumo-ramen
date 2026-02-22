@@ -551,11 +551,11 @@
 			</script>
 <script>document.querySelector(".elementor-form")?.addEventListener("submit",function(){var e=this.querySelector("[name=email]");var r=this.querySelector("[name=replyto]");if(e&&r)r.value=e.value;});</script>
 <style>
-.elementskit-menu-container{transition:transform 0.3s ease,visibility 0.3s;transform:translateX(100%);visibility:hidden;position:fixed;top:0;right:0;bottom:0;z-index:10000;overflow-y:auto;background:#fff;}
+.elementskit-menu-container{transition:transform 0.3s ease,visibility 0.3s;transform:translateX(100%);visibility:hidden;position:fixed;top:0;right:0;bottom:0;z-index:10000;overflow-y:auto;background:#fff;max-width:350px;width:100%;padding:15px;}
 .elementskit-menu-container.active{transform:translateX(0);visibility:visible;}
 .elementskit-menu-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:9999;transition:opacity 0.3s;}
 .elementskit-menu-overlay.active{display:block;}
-@media(min-width:1025px){.elementskit-menu-container{transform:none!important;visibility:visible!important;position:static!important;overflow:visible!important;}.elementskit-menu-overlay{display:none!important;}}
+@media(max-width:767px){.elementskit-menu-container{max-width:80%;}}@media(min-width:1025px){.elementskit-menu-container{transform:none!important;visibility:visible!important;position:static!important;overflow:visible!important;max-width:none;padding:0;}.elementskit-menu-overlay{display:none!important;}}
 </style>
 <script>
 (function(){
