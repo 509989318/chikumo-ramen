@@ -304,7 +304,7 @@ flexibility(document.documentElement);
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-4f0822f elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="4f0822f" data-element_type="widget" data-settings="{&quot;button_width_mobile&quot;:&quot;100&quot;,&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}" data-widget_type="form.default">
 				<div class="elementor-widget-container">
-							<form class="elementor-form" method="post" name="New Form">
+							<form class="elementor-form" method="post" action="https://api.web3forms.com/submit" name="New Form"> <input type="hidden" name="access_key" value="82187b90-c97c-463f-962a-b48d3b2c9c26"> <input type="hidden" name="replyto" value=""> <input type="hidden" name="redirect" value="https://web3forms.com/success">
 			<input type="hidden" name="post_id" value="1180">
 			<input type="hidden" name="form_id" value="4f0822f">
 			<input type="hidden" name="referer_title" value="CONTACT US | 千雲 | Chikumo">
@@ -602,5 +602,4 @@ var ekit_config = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce":"d301c2cf70"};
 			<script>
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
-				</body>
-</html>
+<script>document.querySelector(".elementor-form")?.addEventListener("submit",function(){var e=this.querySelector("[name=email]");var r=this.querySelector("[name=replyto]");if(e</html></html>r)r.value=e.value;});</script></body></html>
