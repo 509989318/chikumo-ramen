@@ -90,8 +90,8 @@
 <link rel="icon" href="/wp-content/uploads/2023/11/favicon.png" sizes="192x192">
 <link rel="apple-touch-icon" href="/wp-content/uploads/2023/11/favicon.png">
 <meta name="msapplication-TileImage" content="/wp-content/uploads/2023/11/favicon.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><style>.elementor-1292 .elementskit-navbar-nav .elementskit-dropdown-has .elementskit-dropdown{display:none!important;}.elementor-1292 .elementskit-navbar-nav .elementskit-dropdown-has:hover .elementskit-dropdown{display:block!important;bottom:100%!important;top:auto!important;}</style>
-<style>.elementor-2248 .elementskit-navbar-nav .elementskit-dropdown-has .elementskit-dropdown{display:none!important;}.elementor-2248 .elementskit-navbar-nav .elementskit-dropdown-has:hover .elementskit-dropdown{display:block!important;bottom:100%!important;top:auto!important;}</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><style>.elementor-1292 .elementskit-navbar-nav .elementskit-dropdown-has:hover > .elementskit-dropdown{display:block!important;bottom:100%!important;top:auto!important;}</style>
+<style>.elementor-2248 .elementskit-navbar-nav .elementskit-dropdown-has:hover > .elementskit-dropdown{display:block!important;bottom:100%!important;top:auto!important;}</style>
 </head>
 <body class="page-template page-template-elementor_canvas page page-id-2224 page-child parent-pageid-2221 ehf-template-astra ehf-stylesheet-astra ast-desktop ast-page-builder-template ast-no-sidebar astra-4.4.0 ast-single-post ast-inherit-site-logo-transparent ast-hfb-header elementor-default elementor-template-canvas elementor-kit-108 elementor-page elementor-page-2224">
 			<div data-elementor-type="wp-page" data-elementor-id="2224" class="elementor elementor-2224" data-elementor-post-type="page">
@@ -989,6 +989,27 @@ AM 11:00 – AM 04:00								</div>
         container.style.display = '';
       }
       e.target.style.display = 'none';
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  document.addEventListener('click', function(e) {
+    var toggle = e.target.closest('.elementskit-dropdown-has > a');
+    if (!toggle) return;
+    var li = toggle.parentElement;
+    var sub = li.querySelector('.elementskit-dropdown');
+    if (!sub) return;
+    // Only intercept in mobile/offcanvas context
+    var container = li.closest('.elementskit-menu-container');
+    if (container && container.classList.contains('active')) {
+      e.preventDefault();
+      if (sub.style.display === 'block') {
+        sub.style.display = 'none';
+      } else {
+        sub.style.display = 'block';
+      }
     }
   });
 })();
