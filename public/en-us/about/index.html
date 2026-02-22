@@ -899,5 +899,45 @@
 <script>
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
-				</body>
+				<script>
+(function(){
+  document.addEventListener('click', function(e) {
+    var toggler = e.target.closest('.elementskit-menu-toggler');
+    if (!toggler) return;
+    e.preventDefault();
+    // Find the parent nav
+    var nav = toggler.closest('nav') || toggler.closest('[class*="elementor"]');
+    if (!nav) return;
+    var container = nav.querySelector('.elementskit-menu-container');
+    if (!container) return;
+    // Toggle active state
+    if (container.classList.contains('active')) {
+      container.classList.remove('active');
+      container.style.display = '';
+    } else {
+      container.classList.add('active');
+      container.style.display = 'block';
+    }
+    // Also handle overlay
+    var overlay = nav.querySelector('.elementskit-menu-overlay');
+    if (overlay) {
+      overlay.style.display = container.classList.contains('active') ? 'block' : 'none';
+    }
+  });
+  // Close on overlay click
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('elementskit-menu-overlay')) {
+      var nav = e.target.closest('nav') || e.target.closest('[class*="elementor"]');
+      if (!nav) return;
+      var container = nav.querySelector('.elementskit-menu-container');
+      if (container) {
+        container.classList.remove('active');
+        container.style.display = '';
+      }
+      e.target.style.display = 'none';
+    }
+  });
+})();
+</script>
+</body>
 </html>
