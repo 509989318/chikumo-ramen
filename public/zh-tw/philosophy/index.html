@@ -905,63 +905,52 @@
 <script>
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
-				<script>
+				<style>
+.elementskit-menu-container{transition:transform 0.3s ease,visibility 0.3s;transform:translateX(100%);visibility:hidden;position:fixed;top:0;right:0;bottom:0;z-index:10000;overflow-y:auto;background:#fff;}
+.elementskit-menu-container.active{transform:translateX(0);visibility:visible;}
+.elementskit-menu-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:9999;transition:opacity 0.3s;}
+.elementskit-menu-overlay.active{display:block;}
+@media(min-width:1025px){.elementskit-menu-container{transform:none!important;visibility:visible!important;position:static!important;overflow:visible!important;}.elementskit-menu-overlay{display:none!important;}}
+</style>
+<script>
 (function(){
-  document.addEventListener('click', function(e) {
-    var toggler = e.target.closest('.elementskit-menu-toggler');
-    if (!toggler) return;
+  function findNav(el){return el.closest('nav')||el.closest('[class*="elementor"]');}
+  document.addEventListener('click',function(e){
+    var toggler=e.target.closest('.elementskit-menu-toggler');
+    if(!toggler)return;
     e.preventDefault();
-    // Find the parent nav
-    var nav = toggler.closest('nav') || toggler.closest('[class*="elementor"]');
-    if (!nav) return;
-    var container = nav.querySelector('.elementskit-menu-container');
-    if (!container) return;
-    // Toggle active state
-    if (container.classList.contains('active')) {
+    var nav=findNav(toggler);if(!nav)return;
+    var container=nav.querySelector('.elementskit-menu-container');
+    var overlay=nav.querySelector('.elementskit-menu-overlay');
+    if(!container)return;
+    var isOpen=container.classList.contains('active');
+    if(isOpen){
       container.classList.remove('active');
-      container.style.display = '';
-    } else {
+      if(overlay)overlay.classList.remove('active');
+    }else{
       container.classList.add('active');
-      container.style.display = 'block';
-    }
-    // Also handle overlay
-    var overlay = nav.querySelector('.elementskit-menu-overlay');
-    if (overlay) {
-      overlay.style.display = container.classList.contains('active') ? 'block' : 'none';
+      if(overlay)overlay.classList.add('active');
     }
   });
   // Close on overlay click
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('elementskit-menu-overlay')) {
-      var nav = e.target.closest('nav') || e.target.closest('[class*="elementor"]');
-      if (!nav) return;
-      var container = nav.querySelector('.elementskit-menu-container');
-      if (container) {
-        container.classList.remove('active');
-        container.style.display = '';
-      }
-      e.target.style.display = 'none';
-    }
+  document.addEventListener('click',function(e){
+    if(!e.target.classList.contains('elementskit-menu-overlay'))return;
+    var nav=findNav(e.target);if(!nav)return;
+    var container=nav.querySelector('.elementskit-menu-container');
+    if(container)container.classList.remove('active');
+    e.target.classList.remove('active');
   });
-})();
-</script>
-<script>
-(function(){
-  document.addEventListener('click', function(e) {
-    var toggle = e.target.closest('.elementskit-dropdown-has > a');
-    if (!toggle) return;
-    var li = toggle.parentElement;
-    var sub = li.querySelector('.elementskit-dropdown');
-    if (!sub) return;
-    // Only intercept in mobile/offcanvas context
-    var container = li.closest('.elementskit-menu-container');
-    if (container && container.classList.contains('active')) {
+  // Submenu toggle in mobile
+  document.addEventListener('click',function(e){
+    var toggle=e.target.closest('.elementskit-dropdown-has > a');
+    if(!toggle)return;
+    var li=toggle.parentElement;
+    var sub=li.querySelector('.elementskit-dropdown');
+    if(!sub)return;
+    var container=li.closest('.elementskit-menu-container');
+    if(container&&container.classList.contains('active')){
       e.preventDefault();
-      if (sub.style.display === 'block') {
-        sub.style.display = 'none';
-      } else {
-        sub.style.display = 'block';
-      }
+      sub.style.display=sub.style.display==='block'?'none':'block';
     }
   });
 })();
