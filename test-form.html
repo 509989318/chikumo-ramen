@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Contact Form Test</title></head>
+<body>
+<h2>Web3Forms テスト送信 (Reply-To テスト)</h2>
+<form action="https://api.web3forms.com/submit" method="POST" id="testform">
+  <input type="hidden" name="access_key" value="82187b90-c97c-463f-962a-b48d3b2c9c26">
+  <input type="hidden" name="subject" value="千雲ラーメン Reply-Toテスト">
+  <input type="hidden" name="replyto" value="">
+  <p>名前: <input type="text" name="name" value="テスト太郎"></p>
+  <p>メール: <input type="email" name="email" value="replytest@example.com"></p>
+  <p>内容: <textarea name="message">Reply-Toテストです</textarea></p>
+  <button type="submit">Send</button>
+</form>
+<script>
+document.getElementById("testform").addEventListener("submit", function(){
+  var e = this.querySelector("[name=email]");
+  var r = this.querySelector("[name=replyto]");
+  if(e && r) r.value = e.value;
+});
+</script>
+</body></html>
