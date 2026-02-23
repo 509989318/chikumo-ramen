@@ -24,4 +24,4 @@
 @media(max-width:767px){.elementskit-menu-container.elementskit-menu-offcanvas-elements{max-width:80%;}}
 
 /* Desktop: reset to inline */
-@media(min-width:1025px){.elementskit-menu-container.elementskit-menu-offcanvas-elements{position:static!important;left:auto!important;height:auto!important;overflow:visible!important;max-width:none;flex-direction:row;width:auto;display:flex;}.elementskit-menu-overlay{display:none!important;}.elementskit-nav-identity-panel{display:none!important;}}
+@media(min-width:1025px){.elementskit-menu-container.elementskit-menu-offcanvas-elements{position:static!important;left:auto!important;height:auto!important;overflow:visible!important;max-width:none;flex-direction:row;width:auto;display:flex;background:transparent;}.elementskit-menu-overlay{display:none!important;}.elementskit-nav-identity-panel{display:none!important;}}
