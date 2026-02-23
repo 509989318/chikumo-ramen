@@ -335,6 +335,25 @@ export const location = {
   },
 } as const;
 
+export const galleryImages = [
+  '/wp-content/uploads/2023/11/231222_0086-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0918-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0187-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0115-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0518-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0399-1-1.png',
+  '/wp-content/uploads/2023/11/DSC0293-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0081-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0127-2-1.png',
+  '/wp-content/uploads/2023/11/231222_1199-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0805-1-1.png',
+  '/wp-content/uploads/2023/11/231222_1171-1-1.png',
+  '/wp-content/uploads/2023/11/231222_1197-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0281-1-1.png',
+  '/wp-content/uploads/2023/11/231222_0433-2-1.png',
+  '/wp-content/uploads/2023/11/231222_1096-1-3.png',
+] as const;
+
 export const gallery = {
   'ja-jp': { title: 'GALLERY | 千雲 | Chikumo', description: 'ギャラリー', heading: 'GALLERY' },
   'zh-tw': { title: 'GALLERY | 千雲 | Chikumo', description: '藝廊', heading: 'GALLERY' },
