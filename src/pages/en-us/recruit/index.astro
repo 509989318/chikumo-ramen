@@ -1,0 +1,47 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PageHeading from '../../../components/PageHeading.astro';
+import { recruit, recruitLink } from '../../../i18n/translations';
+const lang = 'en-us' as const;
+const t = recruit[lang];
+---
+<Base title={t.title} description={t.description} lang={lang}>
+  <PageHeading title={t.heading} />
+
+  <!-- Photo -->
+  <section class="py-4">
+    <img src="/wp-content/uploads/2023/11/231222_1134-1-768x266.png" alt="Recruit" class="w-full max-w-5xl mx-auto object-cover aspect-[3/1]" />
+  </section>
+
+  <section class="py-16 md:py-24 px-6 max-w-3xl mx-auto">
+    <h2 class="section-title text-xl md:text-2xl mb-10 text-black">{t.jobTitle}</h2>
+
+    <div class="mb-8">
+      <h3 class="font-['Jost',sans-serif] text-sm font-medium text-black mb-4">{t.positionsLabel}</h3>
+      <ul class="space-y-2">
+        {t.positions.map(pos => (
+          <li class="text-sm text-gray-600 pl-4 border-l-2 border-gray-300">{pos}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="font-['Jost',sans-serif] text-sm font-medium text-black mb-2">{t.messageLabel}</h3>
+    </div>
+
+    <div class="mb-12">
+      <h3 class="font-['Jost',sans-serif] text-sm font-medium text-black mb-2">{t.membersLabel}</h3>
+    </div>
+
+    <div class="text-center">
+      <a
+        href={recruitLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block px-10 py-3 bg-black text-white font-['Jost',sans-serif] text-sm tracking-wider hover:bg-[#FB720F] transition-colors"
+      >
+        {t.applyButton}
+      </a>
+    </div>
+  </section>
+</Base>

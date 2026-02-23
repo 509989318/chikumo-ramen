@@ -1,0 +1,28 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PageHeading from '../../../components/PageHeading.astro';
+import { about } from '../../../i18n/translations';
+const lang = 'ja-jp' as const;
+const t = about[lang];
+---
+<Base title={t.title} description={t.description} lang={lang}>
+  <PageHeading title={t.heading} />
+
+  <!-- Photo -->
+  <section class="py-4">
+    <img src="/wp-content/uploads/2023/11/231222_0770-1-1.png" alt="About" class="w-full max-w-5xl mx-auto object-cover aspect-[3/1]" />
+  </section>
+
+  <!-- Company Profile -->
+  <section class="py-16 md:py-24 px-6 max-w-3xl mx-auto">
+    <h2 class="section-title text-xl md:text-2xl mb-10 text-black">{t.profileTitle}</h2>
+    <dl class="divide-y divide-gray-200">
+      {t.rows.map(row => (
+        <div class="py-4 md:py-5 flex flex-col md:flex-row md:gap-8">
+          <dt class="font-['Jost',sans-serif] text-sm font-medium text-black md:w-48 flex-shrink-0 mb-1 md:mb-0">{row.label}</dt>
+          <dd class="text-sm text-gray-600">{row.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+</Base>
