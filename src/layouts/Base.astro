@@ -10,9 +10,10 @@ interface Props {
   description: string;
   lang: Lang;
   ogImage?: string;
+  showPreloader?: boolean;
 }
 
-const { title, description, lang, ogImage = '/wp-content/uploads/2024/02/231222_0086-1-1.png' } = Astro.props;
+const { title, description, lang, ogImage = '/wp-content/uploads/2024/02/231222_0086-1-1.png', showPreloader = false } = Astro.props;
 const langMap = { 'ja-jp': 'ja', 'zh-tw': 'zh-TW', 'en-us': 'en' };
 const htmlLang = langMap[lang] || 'ja';
 ---
@@ -30,12 +31,16 @@ const htmlLang = langMap[lang] || 'ja';
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/wp-content/uploads/2023/11/Group-25.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/wp-content/uploads/elementor/google-fonts/css/jost.css">
+  <link rel="stylesheet" href="/wp-content/uploads/elementor/google-fonts/css/notoserifjp.css">
+  <link rel="stylesheet" href="/wp-content/uploads/elementor/google-fonts/css/roboto.css">
+  <link rel="stylesheet" href="/wp-content/uploads/elementor/google-fonts/css/inter.css">
+  <link rel="stylesheet" href="/wp-content/uploads/elementor/google-fonts/css/notosansjp.css">
+  <link rel="stylesheet" href="/wp-content/uploads/elementor/google-fonts/css/notosanstc.css">
+  <link rel="stylesheet" href="/wp-content/uploads/elementor/google-fonts/css/notoseriftc.css">
 </head>
 <body class="bg-white text-[#7A7A7A] font-['Roboto',sans-serif] overflow-x-hidden">
-  <Preloader />
+  {showPreloader && <Preloader />}
   <Header lang={lang} />
   <main>
     <slot />

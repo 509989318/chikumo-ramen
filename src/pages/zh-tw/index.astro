@@ -4,7 +4,7 @@ import { index } from '../../i18n/translations';
 const lang = 'zh-tw' as const;
 const t = index[lang];
 ---
-<Base title={t.title} description={t.description} lang={lang}>
+<Base title={t.title} description={t.description} lang={lang} showPreloader={true}>
   <!-- Hero -->
   <section class="relative h-[60vh] md:h-[80vh] flex items-center justify-center bg-black">
     <img src="/wp-content/uploads/2023/11/231222_0086_2-1-1.png" alt="Chikumo" class="absolute inset-0 w-full h-full object-cover opacity-70" />

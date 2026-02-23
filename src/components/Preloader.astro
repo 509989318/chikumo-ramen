@@ -1,7 +1,13 @@
 ---
 ---
-<div class="preloader fixed inset-0 z-[1000] bg-white flex items-center justify-center transition-opacity duration-500">
-  <img src="/wp-content/uploads/2023/11/Group-25.png" alt="Chikumo" class="w-20 h-20 animate-pulse" />
+<!-- Mobile Preloader (background image) -->
+<div class="preloader fixed inset-0 z-[2000] bg-white flex items-center justify-center transition-opacity duration-500 md:hidden"
+     style="background-image: url('/wp-content/uploads/2023/11/Frame.png'); background-position: center; background-repeat: no-repeat;">
+</div>
+
+<!-- Tablet/Desktop Preloader -->
+<div class="preloader fixed inset-0 z-[1000] bg-white hidden md:flex items-center justify-center transition-opacity duration-500">
+  <img src="/wp-content/uploads/2023/11/Group-25.png" alt="Chikumo" class="max-w-md lg:max-w-lg w-full" />
 </div>
 
 <style>
