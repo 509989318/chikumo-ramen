@@ -1,0 +1,9 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<section class="py-16 md:py-24 flex items-center justify-center">
+  <h1 class="section-title text-3xl md:text-4xl lg:text-5xl text-black tracking-[3px]">{title}</h1>
+</section>

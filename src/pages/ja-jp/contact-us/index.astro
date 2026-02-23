@@ -1,0 +1,36 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PageHeading from '../../../components/PageHeading.astro';
+import { contactUs } from '../../../i18n/translations';
+const lang = 'ja-jp' as const;
+const t = contactUs[lang];
+---
+<Base title={t.title} description={t.description} lang={lang}>
+  <PageHeading title={t.heading} />
+
+  <section class="py-8 md:py-16 px-6 max-w-2xl mx-auto">
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+      <input type="hidden" name="access_key" value="82187b90-c97c-463f-962a-b48d3b2c9c26">
+      <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+      <div>
+        <label for="name" class="block text-sm font-['Jost',sans-serif] text-black mb-2">{t.nameLabel}</label>
+        <input type="text" id="name" name="name" required class="form-input" />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-['Jost',sans-serif] text-black mb-2">{t.emailLabel}</label>
+        <input type="email" id="email" name="email" required class="form-input" />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-['Jost',sans-serif] text-black mb-2">{t.messageLabel}</label>
+        <textarea id="message" name="message" rows="6" required class="form-input"></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="form-submit">{t.submitLabel}</button>
+      </div>
+    </form>
+  </section>
+</Base>

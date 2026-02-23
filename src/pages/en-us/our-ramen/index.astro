@@ -1,0 +1,28 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PageHeading from '../../../components/PageHeading.astro';
+import { ourRamen } from '../../../i18n/translations';
+const lang = 'en-us' as const;
+const t = ourRamen[lang];
+---
+<Base title={t.title} description={t.description} lang={lang}>
+  <PageHeading title={t.heading} />
+
+  <section class="py-8 md:py-16 px-6 max-w-5xl mx-auto">
+    <h2 class="section-title text-xl md:text-2xl mb-12 text-center text-black">{t.subtitle}</h2>
+
+    <div class="space-y-20">
+      {t.items.map((item, i) => (
+        <div class:list={['flex flex-col md:flex-row gap-8 md:gap-12 items-center', { 'md:flex-row-reverse': i % 2 === 1 }]}>
+          <div class="w-full md:w-1/2">
+            <img src={item.image} alt={item.name.split('\n')[0]} class="w-full rounded-lg shadow-lg" />
+          </div>
+          <div class="w-full md:w-1/2 text-center md:text-left">
+            <h3 class="font-['Noto_Serif_JP',serif] text-xl md:text-2xl font-light text-black mb-4 whitespace-pre-line">{item.name}</h3>
+            <p class="text-base leading-loose whitespace-pre-line">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

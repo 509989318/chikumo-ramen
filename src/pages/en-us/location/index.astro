@@ -1,0 +1,33 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PageHeading from '../../../components/PageHeading.astro';
+import { location } from '../../../i18n/translations';
+const lang = 'en-us' as const;
+const t = location[lang];
+---
+<Base title={t.title} description={t.description} lang={lang}>
+  <PageHeading title={t.heading} />
+
+  <section class="py-8 md:py-16 px-6 max-w-5xl mx-auto">
+    <div class="space-y-16">
+      {t.stores.map(store => (
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="w-full md:w-1/2">
+            <img src={store.image} alt={store.name} class="w-full rounded-lg shadow-lg object-cover aspect-[3/1]" />
+          </div>
+          <div class="w-full md:w-1/2">
+            <h3 class="font-['Jost',sans-serif] text-lg font-medium text-black mb-4">{store.name}</h3>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p>{store.address}</p>
+              <p>{store.phone}</p>
+              <p>{store.hours}</p>
+              {store.uber && (
+                <span class="inline-block mt-2 px-4 py-1 bg-black text-white text-xs font-['Jost',sans-serif] tracking-wider">UBER</span>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
